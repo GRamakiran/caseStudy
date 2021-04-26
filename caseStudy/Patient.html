@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="center1">
+        <h1>Patient Login</h1>
+        <form action="booking.html" method="post" onsubmit="return local()">
+            <div class="text">
+                <input type="text" id="mail" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="text">
+                <input type="password" id="pass" required>
+                <span></span>
+                <label>Password</label>
+
+            </div>
+            <div class="pass">Forgot Password?</div>
+            <input type="submit" value="Login" >
+            <div class="signup">
+                Not a member?<a href="./patientsignup.html">SignUp</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function local() {
+            var mail = document.getElementById("mail").value;
+            var passw = document.getElementById("pass").value;
+            if (mail == localStorage.getItem('email') && passw == localStorage.getItem('password')) {
+                alert("successfully logged in");
+                return true;
+            }
+            else{
+                alert("Invalid UserId or Password");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

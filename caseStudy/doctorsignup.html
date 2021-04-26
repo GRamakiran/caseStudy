@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor signup</title>
+    <style>
+        .bd {
+            background: darkslateblue;
+            /* text-align: center; */
+
+        }
+
+        .dd {
+            background-color: blue;
+
+            border: 3px solid green;
+            border-radius: 15px;
+            border-left: 500px;
+
+        }
+    </style>
+</head>
+
+<body class="bd">
+    <div class="dd">
+        <table align="center" cellpadding="7">
+            <form action="" name="myform" onsubmit="return local()">
+                <h1 style="text-align: center;">Please provide your details</h1>
+                <tr>
+                    <td>
+                        Name:
+                    <td>
+                        <input type="text" placeholder="Name" pattern="[a-zA-Z ]{1,32}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Specialization:
+                    <td>
+                        <input type="text" placeholder="Specialis.." required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Adhaar No:
+                    <td>
+                        <input type="text" placeholder="Adhaar" pattern="[0-9]{12}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contact No:
+                    <td>
+                        <input type="text" placeholder="contactno" pattern="[7896][0-9]{9}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email/Username:
+                    <td>
+                        <input type="email" placeholder="abc@gmail.com" id="mail" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                    <td>
+                        <input type="password" placeholder="password" id="pasw1" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Conform Password:
+                    <td>
+                        <input type="password" placeholder="C password" id="pasw2" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit">
+            </form>
+        </table>
+    </div>
+    <script type="text/javascript">
+        function local() {
+            var mail = document.getElementById("mail").value;
+            var passw1 = document.getElementById("pasw1").value;
+            var passw2 = document.getElementById("pasw2").value;
+            if (passw1 == passw2) {
+
+                sessionStorage.setItem('email', mail);
+                sessionStorage.setItem('password', passw1);
+                alert("Signup has been successfull");
+                return true;
+            }
+            else {
+                alert("password and confirm password are must be same");
+            }
+        }
+    </script>
+</body>
+
+</html>
